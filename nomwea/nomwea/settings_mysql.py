@@ -82,8 +82,14 @@ DATABASES = {
     'birds_detections': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
-		'read_default_file': join(BASE_DIR,'db.cnf'),
-	},
+		    'read_default_file': join(BASE_DIR,'birds_detections_db.cnf'),
+        },
+    },
+    'weather': {
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+		    'read_default_file': join(BASE_DIR,'weather_db.cnf'),
+        },
     }
 }
 
