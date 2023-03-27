@@ -87,9 +87,13 @@ DATABASES = {
     },
     'weather': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-		    'read_default_file': join(BASE_DIR,'weather_db.cnf'),
-        },
+	'NAME': 'weather',
+        'HOST': 'localhost',
+        'PASSWORD': '$5M^afY2m8*9Q824',
+        'USER': 'nocmig',
+#        'OPTIONS': {
+#		    'read_default_file': join(BASE_DIR,'weather_db.cnf'),
+#        },
     }
 }
 
