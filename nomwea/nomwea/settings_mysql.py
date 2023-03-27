@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 from os.path import join
 from pathlib import Path
+from json import load
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -74,29 +75,12 @@ WSGI_APPLICATION = 'nomwea.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+with open(join(BASE_DIR,"dbs.json")) as f:
+    DATABASES = load(f)
+DATABASES["default"] = {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     },
-    'birds_detections': {
-        'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-		    'read_default_file': join(BASE_DIR,'birds_detections_db.cnf'),
-        },
-    },
-    'weather': {
-        'ENGINE': 'django.db.backends.mysql',
-	'NAME': 'weather',
-        'HOST': 'localhost',
-        'PASSWORD': '$5M^afY2m8*9Q824',
-        'USER': 'nocmig',
-#        'OPTIONS': {
-#		    'read_default_file': join(BASE_DIR,'weather_db.cnf'),
-#        },
-    }
-}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
