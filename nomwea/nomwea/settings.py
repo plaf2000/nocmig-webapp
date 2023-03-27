@@ -1,1 +1,1 @@
-settings_default.py
+settings_mysql.py

@@ -26,7 +26,7 @@ with open(join(BASE_DIR,"key.txt")) as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.119']
 
 
 # Application definition
@@ -78,6 +78,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'birds_detections': {
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+		'read_default_file': join(BASE_DIR,'db.cnf'),
+	},
     }
 }
 
