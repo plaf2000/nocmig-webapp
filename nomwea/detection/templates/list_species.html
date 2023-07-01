@@ -1,0 +1,19 @@
+
+<table>
+    <thead>
+        <tr>
+            <td>Code</td>
+            <td>Lat</td>
+            <td>It</td>
+            <td>En</td>
+        </tr>
+    </thead>
+    {% for code in codes %}
+        <tr >
+            <td>{{ code.code }}</td>
+            <td>{{ code.species.lat }}</td>
+            <td>{{ code.species.it }}</td>
+            <td>{{ code.species.en }}</td>
+        </tr>
+    {% endfor %}
+</table>

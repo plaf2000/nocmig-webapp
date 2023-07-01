@@ -128,4 +128,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-DATABASE_ROUTERS = ['weather.router.WeatherRouter']
+DATABASE_ROUTERS = ['router.DBRouter']
