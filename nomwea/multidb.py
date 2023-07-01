@@ -1,6 +1,4 @@
 from django.contrib import admin
-from .models import WeatherMeasurement
-
 # Register your models here.
 class MultiDBModelAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
@@ -24,9 +22,3 @@ class MultiDBModelAdmin(admin.ModelAdmin):
         # Tell Django to populate ManyToMany widgets using a query
         # on the 'other' database.
         return super().formfield_for_manytomany(db_field, request, using=self.using, **kwargs)
-
-
-class WeatherAdmin(MultiDBModelAdmin):
-    using = 'weather'
-
-admin.site.register(WeatherMeasurement, WeatherAdmin)

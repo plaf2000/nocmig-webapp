@@ -132,3 +132,4 @@ dmypy.json
 key.txt
 *_db.cnf
 dbs.json
+bird_species.csv
